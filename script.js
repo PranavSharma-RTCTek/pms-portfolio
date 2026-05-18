@@ -1,3 +1,9 @@
+function init() {
+
+/* =========================
+   THREE SETUP
+========================= */
+
 const canvas = document.querySelector("#bg");
 
 const scene = new THREE.Scene();
@@ -36,10 +42,10 @@ let activeColor = sections[0].color.clone();
 let targetZ = 6;
 
 /* =========================
-   GPU PARTICLES
+   PARTICLES
 ========================= */
 
-const count = 1800;
+const count = 1600;
 
 const geometry = new THREE.BufferGeometry();
 const positions = new Float32Array(count * 3);
@@ -69,6 +75,8 @@ function getActiveSection() {
 
     sections.forEach((s, i) => {
         const el = document.getElementById(s.id);
+        if (!el) return;
+
         const rect = el.getBoundingClientRect();
 
         if (rect.top <= window.innerHeight * 0.5) {
@@ -80,7 +88,7 @@ function getActiveSection() {
 }
 
 /* =========================
-   SCROLL STATE
+   SCROLL
 ========================= */
 
 let scrollY = 0;
@@ -89,13 +97,12 @@ window.addEventListener("scroll", () => {
     scrollY = window.scrollY;
 
     const active = sections[getActiveSection()];
-
     activeColor.lerp(active.color, 0.08);
     targetZ = active.z;
 });
 
 /* =========================
-   ANIMATION LOOP
+   LOOP
 ========================= */
 
 function animate() {
@@ -127,7 +134,7 @@ window.addEventListener("resize", () => {
 });
 
 /* =========================
-   REVEAL SYSTEM
+   REVEAL
 ========================= */
 
 const observer = new IntersectionObserver(entries => {
@@ -146,7 +153,7 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
 /* =========================
-   MAGNET SYSTEM
+   MAGNET
 ========================= */
 
 document.querySelectorAll(".magnet").forEach(el => {
@@ -171,3 +178,7 @@ document.querySelectorAll(".magnet").forEach(el => {
         });
     });
 });
+
+} // init end
+
+window.addEventListener("load", init);

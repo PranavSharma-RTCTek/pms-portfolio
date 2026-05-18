@@ -11,7 +11,7 @@ body {
     overflow-x: hidden;
 }
 
-/* =============== WEBGL =============== */
+/* ===== WEBGL ===== */
 
 #bg {
     position: fixed;
@@ -22,11 +22,11 @@ body {
 .overlay {
     position: fixed;
     inset: 0;
-    background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.75));
+    background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.78));
     z-index: -1;
 }
 
-/* =============== NAV =============== */
+/* ===== NAV ===== */
 
 .nav {
     position: fixed;
@@ -35,8 +35,9 @@ body {
     padding: 18px 10%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     backdrop-filter: blur(16px);
-    background: rgba(10, 12, 18, 0.55);
+    background: rgba(10, 12, 18, 0.6);
     z-index: 10;
 }
 
@@ -47,7 +48,7 @@ body {
     font-size: 13px;
 }
 
-/* =============== SECTIONS =============== */
+/* ===== LAYOUT ===== */
 
 .section {
     min-height: 100vh;
@@ -60,7 +61,7 @@ body {
     max-width: 1050px;
 }
 
-/* =============== TYPOGRAPHY =============== */
+/* ===== TYPOGRAPHY ===== */
 
 h1 {
     font-size: 56px;
@@ -78,7 +79,7 @@ p {
     line-height: 1.6;
 }
 
-/* =============== CASE LABEL =============== */
+/* ===== LABEL ===== */
 
 .label {
     font-size: 12px;
@@ -87,7 +88,7 @@ p {
     margin-bottom: 12px;
 }
 
-/* =============== CARD =============== */
+/* ===== CARD ===== */
 
 .card {
     margin-top: 18px;
@@ -98,7 +99,7 @@ p {
     backdrop-filter: blur(14px);
 }
 
-/* =============== INPUTS =============== */
+/* ===== INPUT ===== */
 
 input, textarea {
     width: 100%;
@@ -110,7 +111,7 @@ input, textarea {
     color: white;
 }
 
-/* =============== BUTTON =============== */
+/* ===== BUTTON ===== */
 
 .btn {
     margin-top: 14px;
@@ -122,13 +123,13 @@ input, textarea {
     cursor: pointer;
 }
 
-/* =============== MAGNET =============== */
+/* ===== MAGNET ===== */
 
 .magnet {
     will-change: transform;
 }
 
-/* =============== REVEAL =============== */
+/* ===== REVEAL ===== */
 
 .reveal {
     opacity: 0;
