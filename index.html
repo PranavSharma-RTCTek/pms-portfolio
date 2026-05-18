@@ -4,13 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Engineering Portfolio</title>
+<title>Pranav Mohan Sharma - Engineering Portfolio</title>
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
 <script defer src="script.js"></script>
 </head>
 
@@ -20,67 +21,83 @@
 <div class="overlay"></div>
 
 <header class="nav">
-    <div class="logo">ENGINEER / SYSTEMS</div>
+    <div class="logo">Pranav Mohan Sharma</div>
     <nav>
         <a href="#hero" class="magnet">Home</a>
-        <a href="#case1" class="magnet">Simulation</a>
-        <a href="#case2" class="magnet">Rendering</a>
+        <a href="#projects" class="magnet">Projects</a>
+        <a href="#skills" class="magnet">Skills</a>
         <a href="#about" class="magnet">About</a>
         <a href="#contact" class="magnet">Contact</a>
     </nav>
 </header>
 
-<!-- HERO -->
 <section id="hero" class="section hero">
     <div class="container">
-        <h1 class="reveal">Engineering systems that behave like physics.</h1>
-        <p class="reveal">
-            GPU simulation • Rendering systems • High-performance UI engineering
-        </p>
+        <h1 class="reveal">Engineering across simulation, CAD, and computation.</h1>
+        <p class="reveal">Blender • SolidWorks • MATLAB • Python</p>
     </div>
 </section>
 
-<!-- CASE STUDY 1 -->
-<section id="case1" class="section case">
+<section id="projects" class="section">
     <div class="container">
-        <div class="label">CASE STUDY 01</div>
-        <h2 class="reveal">GPU Simulation Engine</h2>
-        <p class="reveal">
-            A compute-first architecture designed for real-time particle and fluid simulation at scale.
-        </p>
 
-        <div class="card reveal">
-            Deterministic GPU scheduling model with frame-coherent simulation updates.
+        <h2 class="reveal">Projects</h2>
+
+        <div class="grid">
+
+            <!-- CLICKABLE PROJECTS -->
+            <a href="project.html" class="card reveal project-link">
+                <h3>Blender Simulation Scene</h3>
+                <p>Physics-based procedural simulation system.</p>
+            </a>
+
+            <a href="project.html" class="card reveal project-link">
+                <h3>SolidWorks Mechanical Assembly</h3>
+                <p>Parametric CAD design with structural constraints.</p>
+            </a>
+
+            <a href="project.html" class="card reveal project-link">
+                <h3>MATLAB Signal Processing Model</h3>
+                <p>Time-series filtering and numerical analysis pipeline.</p>
+            </a>
+
+            <a href="project.html" class="card coming reveal project-link">
+                <h3>Coming Soon</h3>
+                <p>Project currently under development.</p>
+            </a>
+
+            <a href="project.html" class="card coming reveal project-link">
+                <h3>Coming Soon</h3>
+                <p>Advanced engineering simulation system.</p>
+            </a>
+
+            <a href="project.html" class="card coming reveal project-link">
+                <h3>Coming Soon</h3>
+                <p>Multi-disciplinary computational project.</p>
+            </a>
+
         </div>
     </div>
 </section>
 
-<!-- CASE STUDY 2 -->
-<section id="case2" class="section case">
+<section id="skills" class="section">
     <div class="container">
-        <div class="label">CASE STUDY 02</div>
-        <h2 class="reveal">Rendering Pipeline</h2>
-        <p class="reveal">
-            Shader-driven rendering architecture optimized for latency-sensitive systems.
-        </p>
-
+        <h2 class="reveal">Skills</h2>
         <div class="card reveal">
-            Multi-pass rendering with buffer reuse and optimized frame throughput.
+            Blender • SolidWorks • MATLAB • Python • Physics Simulation • System Design
         </div>
     </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="section">
     <div class="container">
         <h2 class="reveal">About</h2>
         <div class="card reveal">
-            Systems engineering focused on GPU pipelines, performance-critical architecture, and scalable frontend systems.
+            Engineering-focused builder working across simulation, CAD, and computational systems.
         </div>
     </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section">
     <div class="container">
         <h2 class="reveal">Contact</h2>

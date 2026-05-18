@@ -11,7 +11,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== WEBGL ===== */
+/* ============ WEBGL ============ */
 
 #bg {
     position: fixed;
@@ -22,11 +22,11 @@ body {
 .overlay {
     position: fixed;
     inset: 0;
-    background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.78));
+    background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.8));
     z-index: -1;
 }
 
-/* ===== NAV ===== */
+/* ============ NAV ============ */
 
 .nav {
     position: fixed;
@@ -35,20 +35,19 @@ body {
     padding: 18px 10%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     backdrop-filter: blur(16px);
     background: rgba(10, 12, 18, 0.6);
     z-index: 10;
 }
 
 .nav nav a {
-    margin-left: 18px;
+    margin-left: 16px;
     color: #AAB4D6;
     text-decoration: none;
     font-size: 13px;
 }
 
-/* ===== LAYOUT ===== */
+/* ============ LAYOUT ============ */
 
 .section {
     min-height: 100vh;
@@ -58,20 +57,20 @@ body {
 }
 
 .container {
-    max-width: 1050px;
+    max-width: 1100px;
 }
 
-/* ===== TYPOGRAPHY ===== */
+/* ============ TYPOGRAPHY ============ */
 
 h1 {
     font-size: 56px;
     letter-spacing: -1.2px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 h2 {
-    font-size: 38px;
-    margin-bottom: 18px;
+    font-size: 36px;
+    margin-bottom: 22px;
 }
 
 p {
@@ -79,19 +78,17 @@ p {
     line-height: 1.6;
 }
 
-/* ===== LABEL ===== */
+/* ============ GRID ============ */
 
-.label {
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: #5EEAD4;
-    margin-bottom: 12px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
 }
 
-/* ===== CARD ===== */
+/* ============ CARD ============ */
 
 .card {
-    margin-top: 18px;
     padding: 22px;
     border-radius: 14px;
     background: rgba(255,255,255,0.04);
@@ -99,7 +96,25 @@ p {
     backdrop-filter: blur(14px);
 }
 
-/* ===== INPUT ===== */
+.card.coming {
+    opacity: 0.7;
+    border-style: dashed;
+}
+
+/* ============ TAGS ============ */
+
+.tag {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 12px;
+    color: #5EEAD4;
+}
+
+.tag.ghost {
+    color: #AAB4D6;
+}
+
+/* ============ INPUTS ============ */
 
 input, textarea {
     width: 100%;
@@ -111,7 +126,7 @@ input, textarea {
     color: white;
 }
 
-/* ===== BUTTON ===== */
+/* ============ BUTTON ============ */
 
 .btn {
     margin-top: 14px;
@@ -123,16 +138,27 @@ input, textarea {
     cursor: pointer;
 }
 
-/* ===== MAGNET ===== */
+/* ============ MAGNET ============ */
 
 .magnet {
     will-change: transform;
 }
 
-/* ===== REVEAL ===== */
+/* ============ REVEAL ============ */
 
 .reveal {
     opacity: 0;
     transform: translateY(26px);
     filter: blur(10px);
+}
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.project-link:hover {
+    transform: translateY(-4px);
 }

@@ -1,9 +1,5 @@
 function init() {
 
-/* =========================
-   THREE SETUP
-========================= */
-
 const canvas = document.querySelector("#bg");
 
 const scene = new THREE.Scene();
@@ -26,26 +22,7 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-/* =========================
-   SECTION STATE SYSTEM
-========================= */
-
-const sections = [
-    { id: "hero", color: new THREE.Color("#5EEAD4"), z: 6 },
-    { id: "case1", color: new THREE.Color("#60A5FA"), z: 5 },
-    { id: "case2", color: new THREE.Color("#A78BFA"), z: 5 },
-    { id: "about", color: new THREE.Color("#F472B6"), z: 6 },
-    { id: "contact", color: new THREE.Color("#FBBF24"), z: 7 }
-];
-
-let activeColor = sections[0].color.clone();
-let targetZ = 6;
-
-/* =========================
-   PARTICLES
-========================= */
-
-const count = 1600;
+const count = 1700;
 
 const geometry = new THREE.BufferGeometry();
 const positions = new Float32Array(count * 3);
@@ -58,7 +35,7 @@ geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
 
 const material = new THREE.PointsMaterial({
     size: 0.02,
-    color: activeColor,
+    color: 0x5eead4,
     transparent: true,
     opacity: 0.75
 });
@@ -66,44 +43,11 @@ const material = new THREE.PointsMaterial({
 const particles = new THREE.Points(geometry, material);
 scene.add(particles);
 
-/* =========================
-   ACTIVE SECTION DETECTION
-========================= */
-
-function getActiveSection() {
-    let index = 0;
-
-    sections.forEach((s, i) => {
-        const el = document.getElementById(s.id);
-        if (!el) return;
-
-        const rect = el.getBoundingClientRect();
-
-        if (rect.top <= window.innerHeight * 0.5) {
-            index = i;
-        }
-    });
-
-    return index;
-}
-
-/* =========================
-   SCROLL
-========================= */
-
 let scrollY = 0;
 
 window.addEventListener("scroll", () => {
     scrollY = window.scrollY;
-
-    const active = sections[getActiveSection()];
-    activeColor.lerp(active.color, 0.08);
-    targetZ = active.z;
 });
-
-/* =========================
-   LOOP
-========================= */
 
 function animate() {
     requestAnimationFrame(animate);
@@ -112,9 +56,6 @@ function animate() {
         scrollY / (document.body.scrollHeight - window.innerHeight);
 
     camera.position.y = -scrollProgress * 7;
-    camera.position.z += (targetZ - camera.position.z) * 0.05;
-
-    particles.material.color = activeColor;
 
     particles.rotation.y += 0.0004;
 
@@ -123,19 +64,11 @@ function animate() {
 
 animate();
 
-/* =========================
-   RESIZE
-========================= */
-
 window.addEventListener("resize", () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
-
-/* =========================
-   REVEAL
-========================= */
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -151,10 +84,6 @@ const observer = new IntersectionObserver(entries => {
 });
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-
-/* =========================
-   MAGNET
-========================= */
 
 document.querySelectorAll(".magnet").forEach(el => {
     el.addEventListener("mousemove", (e) => {
@@ -179,6 +108,6 @@ document.querySelectorAll(".magnet").forEach(el => {
     });
 });
 
-} // init end
+}
 
 window.addEventListener("load", init);
