@@ -1,38 +1,103 @@
-/* ================= NAV ================= */
+/* =========================================================
+   GSAP SETUP
+========================================================= */
 
-document.querySelector(".menu-toggle").addEventListener("click", () => {
-    document.querySelector(".nav-links").classList.toggle("active");
-});
+gsap.defaults({ ease: "power3.out", duration: 0.6 });
 
-/* ================= TILT EFFECT ================= */
+/* =========================================================
+   INTERSECTION OBSERVER (SECTION REVEAL)
+========================================================= */
 
-const tiltCards = document.querySelectorAll(".tilt");
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            gsap.to(entry.target, {
+                opacity: 1,
+                y: 0,
+                duration: 1
+            });
+        }
+    });
+}, { threshold: 0.15 });
 
-tiltCards.forEach(card => {
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+/* =========================================================
+   TILT + GSAP SMOOTHING
+========================================================= */
+
+const cards = document.querySelectorAll(".tilt");
+
+cards.forEach(card => {
+
     card.addEventListener("mousemove", (e) => {
         const rect = card.getBoundingClientRect();
 
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
 
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+        const rotateX = ((y - rect.height / 2) / rect.height) * -10;
+        const rotateY = ((x - rect.width / 2) / rect.width) * 10;
 
-        const rotateX = ((y - centerY) / centerY) * -8;
-        const rotateY = ((x - centerX) / centerX) * 8;
-
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+        gsap.to(card, {
+            rotationX: rotateX,
+            rotationY: rotateY,
+            scale: 1.04,
+            duration: 0.4
+        });
     });
 
     card.addEventListener("mouseleave", () => {
-        card.style.transform = "perspective(1000px) rotateX(0) rotateY(0) scale(1)";
+        gsap.to(card, {
+            rotationX: 0,
+            rotationY: 0,
+            scale: 1,
+            duration: 0.6
+        });
     });
 });
 
-/* ================= CONTACT FORM ================= */
+/* =========================================================
+   SCROLL-BASED PARALLAX (DEPTH SYSTEM)
+========================================================= */
+
+const parallaxEls = document.querySelectorAll(".parallax");
+
+parallaxEls.forEach(el => {
+    el._y = gsap.quickTo(el, "y", { duration: 0.8, ease: "power3.out" });
+});
+
+window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+
+    parallaxEls.forEach(el => {
+        const depth = parseFloat(el.dataset.depth || 0.1);
+        el._y(scrollY * depth * -0.3);
+    });
+});
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
 
 document.getElementById("contact-form").addEventListener("submit", (e) => {
     e.preventDefault();
-    alert("Message submitted (frontend demo only).");
+    alert("Demo form submitted");
     e.target.reset();
+});
+
+/* =========================================================
+   tsParticles
+========================================================= */
+
+tsParticles.load("tsparticles", {
+    fullScreen: { enable: false },
+    particles: {
+        number: { value: 80 },
+        color: { value: ["#00d9ff"] },
+        shape: { type: "circle" },
+        opacity: { value: 0.4 },
+        size: { value: { min: 1, max: 3 } },
+        move: { enable: true, speed: 1 }
+    }
 });
