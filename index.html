@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engineering Portfolio | Professional Showcase</title>
+    <title>Engineering Portfolio | Systems Design</title>
 
     <link rel="stylesheet" href="style.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- tsParticles -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+    <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 
     <script defer src="script.js"></script>
@@ -35,129 +40,83 @@
 </header>
 
 <!-- HERO -->
-<section id="home" class="hero section-theme-home">
+<section id="home" class="hero section reveal">
 
-    <div class="card hero-card tilt">
-        <h1>Professional Engineering Portfolio</h1>
-        <h2>Mechanical Design • 3D Visualization • Software Development</h2>
+    <div class="card tilt parallax" data-depth="0.12">
+        <h1>Engineering Systems Portfolio</h1>
+        <h2>Design • Simulation • Software Engineering</h2>
         <p>
-            This portfolio presents structured engineering and software development work
-            spanning CAD modeling, simulation, and full-stack application development.
-            Focus areas include performance-driven design and scalable digital systems.
+            Structured engineering portfolio demonstrating computational design,
+            CAD modeling, simulation workflows, and scalable software systems.
         </p>
 
-        <div class="hero-buttons">
-            <a href="#projects" class="btn">Explore Work</a>
-            <a href="assets/resume.pdf" class="btn secondary">Download Resume</a>
-        </div>
+        <a class="btn" href="#projects">Explore Work</a>
+        <a class="btn secondary" href="#">Resume</a>
     </div>
 
-    <div class="card hero-card tilt">
-        <img src="assets/profile-placeholder.jpg" alt="Profile Placeholder">
-        <p class="muted">
-            Profile image placeholder representing engineering and design identity.
-        </p>
+    <div class="card tilt parallax" data-depth="0.18">
+        <img src="assets/profile-placeholder.jpg">
+        <p class="muted">Professional engineering identity placeholder.</p>
     </div>
 
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="projects section-theme-projects">
-    <h2>Featured Engineering Work</h2>
+<section id="projects" class="projects section reveal">
+
+    <h2>Featured Work</h2>
 
     <div class="project-category">
-        <h3>3D Visualization (Blender)</h3>
+        <h3>3D & Visualization</h3>
 
         <div class="project-grid">
 
-            <div class="project-card card tilt">
+            <div class="card tilt parallax project-card" data-depth="0.2">
                 <img src="assets/blender1.jpg">
-                <h4>Architectural Visualization Study</h4>
-                <p>High-fidelity rendering exploring lighting, materials, and spatial composition.</p>
+                <h4>Architectural Render System</h4>
+                <p>Lighting and spatial simulation for realistic rendering environments.</p>
             </div>
 
-            <div class="project-card card tilt">
+            <div class="card tilt parallax project-card" data-depth="0.25">
                 <img src="assets/blender2.jpg">
-                <h4>Product Rendering Prototype</h4>
-                <p>Photorealistic simulation of industrial product design workflow.</p>
+                <h4>Product Visualization Pipeline</h4>
+                <p>Photorealistic product rendering workflow optimized for iteration speed.</p>
             </div>
 
-        </div>
-    </div>
-
-    <div class="project-category">
-        <h3>CAD Engineering (SOLIDWORKS)</h3>
-
-        <div class="project-grid">
-            <div class="project-card card tilt">
-                <img src="assets/solidworks1.jpg">
-                <h4>Mechanical Assembly Design</h4>
-                <p>Parametric CAD model optimized for structural integrity and manufacturability.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="project-category">
-        <h3>Software Systems (Python & MATLAB)</h3>
-
-        <div class="project-grid">
-            <div class="project-card card tilt">
-                <img src="assets/python1.jpg">
-                <h4>Data Processing Pipeline</h4>
-                <p>Automated analytical workflow for engineering dataset transformation and visualization.</p>
-            </div>
         </div>
     </div>
 
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="about section-theme-about">
+<section id="about" class="about section reveal">
 
-    <div class="card tilt">
-        <h2>Professional Overview</h2>
+    <div class="card tilt parallax" data-depth="0.1">
+        <h2>About</h2>
         <p>
-            Engineering-focused developer with experience in CAD modeling, simulation workflows,
-            and full-stack software systems. Strong emphasis on structured problem solving,
-            system optimization, and computational design methods.
+            Engineering-focused developer specializing in CAD systems, simulation workflows,
+            and backend software systems with emphasis on structured architecture.
         </p>
-
-        <div class="skills">
-            <span>Blender</span>
-            <span>SOLIDWORKS</span>
-            <span>MATLAB</span>
-            <span>Python</span>
-            <span>HTML / CSS / JS</span>
-        </div>
     </div>
 
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact section-theme-contact">
+<section id="contact" class="contact section reveal">
 
-    <div class="card tilt">
+    <div class="card tilt parallax" data-depth="0.15">
         <h2>Contact</h2>
 
         <form id="contact-form">
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <textarea placeholder="Project Inquiry / Message" required></textarea>
-            <button type="submit">Submit</button>
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button type="submit" class="btn">Send</button>
         </form>
 
-        <div class="social-links">
-            <a href="#">LinkedIn</a>
-            <a href="#">GitHub</a>
-            <a href="#">Email</a>
-        </div>
     </div>
 
 </section>
-
-<footer>
-    <p>© 2026 Engineering Portfolio | Professional Systems Design</p>
-</footer>
 
 </body>
 </html>
