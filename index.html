@@ -3,113 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YOUR NAME | Engineering Portfolio</title>
+    <title>Engineering Portfolio | Professional Showcase</title>
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- tsParticles -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-
-    <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 
     <script defer src="script.js"></script>
 </head>
+
 <body>
 
-    <!-- PARTICLES -->
-    <div id="tsparticles"></div>
+<div id="tsparticles"></div>
+<canvas id="bg-canvas"></canvas>
+<div id="mouse-trail"></div>
 
-    <!-- THREE.JS CANVAS -->
-    <canvas id="bg-canvas"></canvas>
+<header>
+    <nav class="navbar">
+        <div class="logo">ENGINEER.PORTFOLIO</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle">&#9776;</div>
+    </nav>
+</header>
 
-    <!-- MOUSE TRAIL -->
-    <div id="mouse-trail"></div>
+<!-- HERO -->
+<section id="home" class="hero section-theme-home">
 
-    <!-- NAVBAR -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">YOUR NAME</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle">&#9776;</div>
-        </nav>
-    </header>
-
-    <!-- HERO -->
-    <section id="home" class="hero section-theme-home">
-        <div class="hero-content">
-            <h1>YOUR NAME</h1>
-            <h2>Mechanical Design | 3D Artist | Software Developer</h2>
-            <p>
-                Replace this text with your professional summary,
-                highlighting Blender, SOLIDWORKS, MATLAB, and Python expertise.
-            </p>
-            <a href="#projects" class="btn">View My Work</a>
-            <a href="assets/resume.pdf" target="_blank" class="btn secondary">Resume</a>
-        </div>
-        <div class="hero-image">
-            <img src="assets/profile-placeholder.jpg" alt="Profile">
-        </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="projects section-theme-projects">
-        <h2>Featured Projects</h2>
-
-        <div class="project-category">
-            <h3>Blender Renders</h3>
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="assets/blender1.jpg" alt="">
-                    <h4>Project Title</h4>
-                    <p>Replace with Blender project description.</p>
-                </div>
-
-                <div class="project-card">
-                    <img src="assets/blender2.jpg" alt="">
-                    <h4>Project Title</h4>
-                    <p>Replace with Blender project description.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-category">
-            <h3>SOLIDWORKS Designs</h3>
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="assets/solidworks1.jpg" alt="">
-                    <h4>Project Title</h4>
-                    <p>Replace with CAD project description.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-category">
-            <h3>MATLAB & Python Projects</h3>
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="assets/python1.jpg" alt="">
-                    <h4>Project Title</h4>
-                    <p>Replace with software project description.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="about section-theme-about">
-        <h2>About Me</h2>
+    <div class="card hero-card tilt">
+        <h1>Professional Engineering Portfolio</h1>
+        <h2>Mechanical Design • 3D Visualization • Software Development</h2>
         <p>
-            Replace this with your background, technical stack,
-            engineering capabilities, and software development journey.
+            This portfolio presents structured engineering and software development work
+            spanning CAD modeling, simulation, and full-stack application development.
+            Focus areas include performance-driven design and scalable digital systems.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#projects" class="btn">Explore Work</a>
+            <a href="assets/resume.pdf" class="btn secondary">Download Resume</a>
+        </div>
+    </div>
+
+    <div class="card hero-card tilt">
+        <img src="assets/profile-placeholder.jpg" alt="Profile Placeholder">
+        <p class="muted">
+            Profile image placeholder representing engineering and design identity.
+        </p>
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects section-theme-projects">
+    <h2>Featured Engineering Work</h2>
+
+    <div class="project-category">
+        <h3>3D Visualization (Blender)</h3>
+
+        <div class="project-grid">
+
+            <div class="project-card card tilt">
+                <img src="assets/blender1.jpg">
+                <h4>Architectural Visualization Study</h4>
+                <p>High-fidelity rendering exploring lighting, materials, and spatial composition.</p>
+            </div>
+
+            <div class="project-card card tilt">
+                <img src="assets/blender2.jpg">
+                <h4>Product Rendering Prototype</h4>
+                <p>Photorealistic simulation of industrial product design workflow.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="project-category">
+        <h3>CAD Engineering (SOLIDWORKS)</h3>
+
+        <div class="project-grid">
+            <div class="project-card card tilt">
+                <img src="assets/solidworks1.jpg">
+                <h4>Mechanical Assembly Design</h4>
+                <p>Parametric CAD model optimized for structural integrity and manufacturability.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-category">
+        <h3>Software Systems (Python & MATLAB)</h3>
+
+        <div class="project-grid">
+            <div class="project-card card tilt">
+                <img src="assets/python1.jpg">
+                <h4>Data Processing Pipeline</h4>
+                <p>Automated analytical workflow for engineering dataset transformation and visualization.</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about section-theme-about">
+
+    <div class="card tilt">
+        <h2>Professional Overview</h2>
+        <p>
+            Engineering-focused developer with experience in CAD modeling, simulation workflows,
+            and full-stack software systems. Strong emphasis on structured problem solving,
+            system optimization, and computational design methods.
         </p>
 
         <div class="skills">
@@ -117,33 +127,37 @@
             <span>SOLIDWORKS</span>
             <span>MATLAB</span>
             <span>Python</span>
-            <span>HTML/CSS/JS</span>
+            <span>HTML / CSS / JS</span>
         </div>
-    </section>
+    </div>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact section-theme-contact">
-        <h2>Contact Me</h2>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact section-theme-contact">
+
+    <div class="card tilt">
+        <h2>Contact</h2>
 
         <form id="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <textarea placeholder="Project Inquiry / Message" required></textarea>
+            <button type="submit">Submit</button>
         </form>
 
         <div class="social-links">
-            <!-- Replace -->
             <a href="#">LinkedIn</a>
             <a href="#">GitHub</a>
             <a href="#">Email</a>
         </div>
-    </section>
+    </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 YOUR NAME | Engineering Portfolio</p>
-    </footer>
+</section>
+
+<footer>
+    <p>© 2026 Engineering Portfolio | Professional Systems Design</p>
+</footer>
 
 </body>
 </html>
