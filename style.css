@@ -1,68 +1,79 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --c1: #0A1045;
+    --c2: #00C2D1;
+    --c3: #F9E900;
+    --c4: #F6AF65;
+    --c5: #ED33B9;
 }
 
+/* ================= BASE ================= */
+
 body {
-    font-family: Poppins, sans-serif;
-    background: #0a0a0f;
+    margin: 0;
+    font-family: Poppins;
+    background: var(--c1);
     color: white;
     overflow-x: hidden;
 }
 
-/* ================= GLASS CARD ================= */
+/* ================= PARTICLES LAYER ================= */
+
+#tsparticles {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+}
+
+/* ================= GLASS CARDS ================= */
 
 .card {
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(18px);
     border-radius: 18px;
     padding: 25px;
-    backdrop-filter: blur(16px);
     transform-style: preserve-3d;
 }
 
-/* ================= REVEAL SYSTEM ================= */
+/* ================= BUTTONS ================= */
 
-.section {
-    padding: 120px 10%;
+.btn {
+    display: inline-block;
+    padding: 12px 18px;
+    margin-top: 10px;
+    border-radius: 30px;
+    background: var(--c2);
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-.reveal {
-    opacity: 0;
-    transform: translateY(60px);
+.btn:hover {
+    box-shadow: 0 0 25px var(--c2);
+    transform: translateY(-2px);
 }
 
-/* ================= PARALLAX ================= */
-
-.parallax {
-    will-change: transform;
+.btn.secondary {
+    background: transparent;
+    border: 1px solid var(--c2);
+    color: var(--c2);
 }
 
-/* ================= PROJECT GRID ================= */
+/* ================= BUTTON GLOW VARIANTS ================= */
+
+.btn:hover {
+    box-shadow:
+        0 0 15px var(--c2),
+        0 0 40px var(--c5);
+}
+
+/* ================= GRID ================= */
 
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
-}
-
-/* ================= BUTTON ================= */
-
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 20px;
-    border-radius: 30px;
-    background: #00d9ff;
-    color: black;
-    text-decoration: none;
-}
-
-.btn.secondary {
-    background: transparent;
-    border: 1px solid #00d9ff;
-    color: #00d9ff;
 }
 
 /* ================= NAV ================= */
@@ -71,17 +82,19 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
-    padding: 20px 10%;
-    display: flex;
-    justify-content: space-between;
-    background: rgba(0,0,0,0.5);
+    padding: 18px 10%;
+    background: rgba(0,0,0,0.4);
     backdrop-filter: blur(10px);
 }
 
-/* ================= BACKGROUND ================= */
+/* ================= SECTIONS ================= */
 
-#bg-canvas, #tsparticles {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
+.section {
+    padding: 120px 10%;
+}
+
+/* ================= TILT ================= */
+
+.tilt {
+    will-change: transform;
 }
