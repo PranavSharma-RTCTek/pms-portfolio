@@ -1,86 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 <title>Engineering Portfolio</title>
 
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
 <script defer src="script.js"></script>
 </head>
 
 <body>
 
-<div id="tsparticles"></div>
-<canvas id="bg-canvas"></canvas>
+<canvas id="bg"></canvas>
+<div class="overlay"></div>
 
-<header>
-    <nav class="navbar">
-        <div class="logo">ENGINEER.PORTFOLIO</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+<header class="nav">
+    <div class="logo">ENGINEER / SYSTEMS</div>
+    <nav>
+        <a href="#hero" class="magnet">Home</a>
+        <a href="#case1" class="magnet">Simulation</a>
+        <a href="#case2" class="magnet">Rendering</a>
+        <a href="#about" class="magnet">About</a>
+        <a href="#contact" class="magnet">Contact</a>
     </nav>
 </header>
 
-<section id="home" class="section reveal hero">
-
-    <div class="card tilt parallax" data-depth="0.12">
-        <h1>Engineering Portfolio</h1>
-        <p>Systems design • Simulation • Software engineering</p>
-
-        <a class="btn" href="#projects">Explore</a>
-        <a class="btn secondary" href="#">Resume</a>
+<!-- HERO -->
+<section id="hero" class="section hero">
+    <div class="container">
+        <h1 class="reveal">Engineering systems that behave like physics.</h1>
+        <p class="reveal">GPU simulation • Rendering systems • High-performance UI engineering</p>
     </div>
-
 </section>
 
-<section id="projects" class="section reveal">
+<!-- CASE STUDY 1 -->
+<section id="case1" class="section case">
+    <div class="container">
+        <div class="label">CASE STUDY 01</div>
+        <h2 class="reveal">GPU Simulation Engine</h2>
+        <p class="reveal">
+            A compute-first architecture designed for real-time particle and fluid simulation at scale.
+        </p>
 
-    <h2>Projects</h2>
-
-    <div class="project-grid">
-
-        <div class="card tilt parallax project-card" data-depth="0.2">
-            <h3>CAD System Design</h3>
-            <p>Mechanical simulation pipeline and parametric modeling system.</p>
+        <div class="card reveal">
+            Low-level compute pipeline with deterministic frame execution and GPU scheduling model.
         </div>
+    </div>
+</section>
 
-        <div class="card tilt parallax project-card" data-depth="0.25">
-            <h3>Rendering Engine</h3>
-            <p>Physically based rendering experiments and visualization workflows.</p>
+<!-- CASE STUDY 2 -->
+<section id="case2" class="section case">
+    <div class="container">
+        <div class="label">CASE STUDY 02</div>
+        <h2 class="reveal">Rendering Pipeline</h2>
+        <p class="reveal">
+            Shader-driven rendering architecture optimized for latency-sensitive environments.
+        </p>
+
+        <div class="card reveal">
+            Multi-pass rendering with optimized buffer reuse and frame coherence.
         </div>
-
     </div>
 </section>
 
-<section id="about" class="section reveal">
-    <div class="card tilt parallax" data-depth="0.1">
-        <h2>About</h2>
-        <p>Engineering + software integration focused on scalable systems.</p>
+<!-- ABOUT -->
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="reveal">About</h2>
+        <div class="card reveal">
+            Systems engineering focused on performance-critical architecture, GPU pipelines, and scalable frontends.
+        </div>
     </div>
 </section>
 
-<section id="contact" class="section reveal">
-    <div class="card tilt parallax" data-depth="0.15">
-        <h2>Contact</h2>
-
-        <form id="contact-form">
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="reveal">Contact</h2>
+        <div class="card reveal">
+            <input placeholder="Name">
+            <input placeholder="Email">
             <textarea placeholder="Message"></textarea>
-            <button class="btn">Send</button>
-        </form>
-
+            <button class="btn magnet">Send</button>
+        </div>
     </div>
 </section>
 
